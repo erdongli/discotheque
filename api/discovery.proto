@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package api;
+
+import "api/resource.proto";
+
+option go_package = "github.com/erdongli/discotheque/api";
+
+service RegistryService {
+  rpc Register(RegisterRequest) returns (RegisterResponse);
+  rpc Ping(PingRequest) returns (PingResponse);
+}
+
+message RegisterRequest {
+  Resource resource = 1;
+}
+
+message RegisterResponse {
+  string id = 1;
+}
+
+message PingRequest {
+  string id = 1;
+}
+
+message PingResponse {
+  string id = 1;
+}

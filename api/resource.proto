@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package api;
+
+option go_package = "github.com/erdongli/discotheque/api";
+
+message Resource {
+  ResourceType type = 1;
+  string name = 2;
+}
+
+enum ResourceType {
+  RESOURCE_TYPE_UNKNOWN = 0;
+
+  // Raspberry Pi Zero W
+  RESOURCE_TYPE_RPI0W = 1;
+
+  // Raspberry Pi Zero 2 W
+  RESOURCE_TYPE_RPIZ2 = 2;
+
+  // Raspberry Pi 2 Model B
+  RESOURCE_TYPE_RPI21 = 3;
+
+  // Raspberry Pi 3 Model A+
+  RESOURCE_TYPE_RPI3AP = 4;
+
+  // Raspberry Pi 3 Model B
+  RESOURCE_TYPE_RPI32 = 5;
+
+  // Raspberry Pi 3 Model B+
+  RESOURCE_TYPE_RPI3BP = 6;
+
+  // Raspberry Pi 4 Model B
+  RESOURCE_TYPE_RPI4B = 7;
+
+  // Raspberry Pi Pico W
+  RESOURCE_TYPE_PICOW = 8;
+}
